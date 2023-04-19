@@ -1,0 +1,18 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: naas-appdev
+rules:
+- apiGroups: ["*"]
+  resources:
+  - pods
+  - pods/log
+  - replicaset
+  - deployments
+  - statefulset
+  - daemonsets
+  - services
+  - ingresses
+  verbs: ["get", "watch", "list"]
+
+

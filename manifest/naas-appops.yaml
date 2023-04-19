@@ -1,0 +1,51 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: naas-appops
+rules:
+- apiGroups: ['*']
+  resources:
+  - pods
+  - pods/log
+  - pods/exec
+  - pods/attach
+  # charges de travail
+  - deployments
+  - deployments/scale
+  - statefulsets
+  - daemonsets
+  - replicasets
+  - replicationcontrollers
+  # stockage
+  - persistentvolumes
+  - persistentvolumeclaims
+  # tâches planifiées
+  - jobs
+  - cronjobs
+  # configuration et secret
+  - configmaps
+  - secrets
+  # exposition interne
+  - services
+  - endpoints
+  # exposition externe
+  - ingresses
+  # divers
+  - events
+  verbs:
+  - create
+  - get
+  - watch
+  - delete
+  - list
+  - patch
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - nodes
+  verbs:
+  - get
+  - list
+  - watch
+
