@@ -1,5 +1,7 @@
 # naas-cluster-roles
 
+> ARCHIVE (porté et complété sous forme de script terraform)
+
 ## Description
 
 Définition **expérimentale**  de [ClusterRole Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) pour faciliter la mise à disposition d'une instance Kubernetes en mode "Namespace as a Service".
